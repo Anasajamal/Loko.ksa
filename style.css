@@ -62,11 +62,7 @@
   
   
   
-  
-  /*-----------------------------------*\
-    #RESET
-  \*-----------------------------------*/
-  
+
   *,
   *::before,
   *::after {
@@ -148,9 +144,7 @@
   
   
   
-  /*-----------------------------------*\
-    #REUSED STYLE
-  \*-----------------------------------*/
+
   
   .container { padding-inline: 15px; }
   
@@ -488,10 +482,20 @@
   \*-----------------------------------*/
   
   
-  video{
-    max-height:100%;
-    max-width:100%;
-   }
+  .video-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video {
+ 
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 
   
@@ -988,25 +992,39 @@
   }
 
   .locale a{
-    font-size: 3rem;
+    width:fit-content;
+    font-size: 2.5rem;
     text-transform: capitalize;
     color:#9a3324;
-margin: 2px;
-font-weight: bolder;
+    margin: 2px 2px 2px 0px;
+    font-weight: bolder;
 }
 
 .locale h2 {
     margin-top: 0;
-    font-size: 2rem;
+    font-size: 16px;
+    color: black;
+    font-weight: 300;
   }
   
   .locale p {
-    margin: 0;
+    margin: 0px;
+    color: black;
+    font-weight: 300;
   }
+.locale p mark{
+  background-color: transparent;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.locale .btn:is(:hover, :focus) { background-color: var(--rich-black-fogra-29); }
 
   .locale span{
     font-weight: bolder;
+    text-transform: uppercase;
     color: black;
+    margin-top: 20px;
+    font-size: 2rem;
  }
   .map-container {
     position: relative;
@@ -1161,7 +1179,48 @@ font-weight: bolder;
   
   .copyright-link:is(:hover, :focus) { text-decoration: underline; }
 
- 
+  #contactForm {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #1a181a;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  #contactForm label {
+    display: block;
+  
+    font-weight: bold;
+    color:#787878;
+  }
+  
+  #contactForm input[type="text"],
+  #contactForm input[type="email"],
+  #contactForm textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  #contactForm textarea {
+    height: 50px;
+  }
+  
+  #contactForm button[type="submit"] {
+    background-color:var(--deep-saffron);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  #contactForm button[type="submit"]:hover {
+    background-color: #141313;
+  }
   
   
   /*-----------------------------------*\
@@ -1169,6 +1228,7 @@ font-weight: bolder;
   \*-----------------------------------*/
   
   .back-top-btn {
+    width: fit-content;
     position: fixed;
     bottom: 10px;
     right: 20px;
@@ -1656,3 +1716,11 @@ font-weight: bolder;
     .footer-top .container { grid-template-columns: 1.4fr 1fr 1fr 1.6fr; }
   
   }
+  @media screen and (max-width: 992px) {
+    .video {
+        height:900px; /* Adjusted width for smaller screens */
+    }
+} 
+               
+        
+                      
