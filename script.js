@@ -90,3 +90,23 @@ window.addEventListener("scroll", function () {
   }
 
 });
+function submitContactForm(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  // Here you can implement further validation before sending the data
+  // For example, checking if the email is valid
+
+  // Once validated, you can send the data to your backend or perform any desired action
+  // For demonstration purposes, let's just log the data
+  console.log("Name:", name);
+  console.log("Email:", email);
+  console.log("Message:", message);
+
+  // Optionally, you can display a success message or redirect the user to a thank you page
+  alert("Thank you for contacting us! We will get back to you soon.");
+  document.getElementById("contactForm").reset();
+}
